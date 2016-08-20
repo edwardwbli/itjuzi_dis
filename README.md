@@ -21,11 +21,11 @@
 
 #部署：
 ###Dockerfile
-    1.使用 python3.5作为基础镜像
-    2.将/usr/local/bin设置环境变量
-    3.映射 host 和 container 的目录
-    4.安装 requirements.txt
-    5.特别要说明的是COPY spiders.py /usr/local/lib/python3.5/site-packages/scrapy_redis，将 host 中的 spiders.py 拷贝到container 中的 scrapy_redis 安装目录中，因为 lpop 获取redis 的值在 python2中是 str 类型，而在 python3中是 bytes 类型，这个问题在 scrapy_reids 中需要修复，spiders.py 第84行需要修改；
+   1.使用 python3.5作为基础镜像
+   2.将/usr/local/bin设置环境变量
+   3.映射 host 和 container 的目录
+   4.安装 requirements.txt
+   5.特别要说明的是COPY spiders.py /usr/local/lib/python3.5/site-packages/scrapy_redis，将 host 中的 spiders.py 拷贝到container 中的 scrapy_redis 安装目录中，因为 lpop 获取redis 的值在 python2中是 str 类型，而在 python3中是 bytes 类型，这个问题在 scrapy_reids 中需要修复，spiders.py 第84行需要修改；
    6. 启动后立即执行爬行命令 scrapy crawl itjuzi_dis
 
 ###docker-compose.yml
