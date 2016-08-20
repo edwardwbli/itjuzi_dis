@@ -41,4 +41,5 @@
 
 #现在给 redis 中放入 start_urls:
    lpush itjuziCrawler:start_urls http://www.itjuzi.com/company
+   
    4个爬虫都动起来了，一直爬到start_urls为空
